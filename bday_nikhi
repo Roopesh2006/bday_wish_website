@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Mubry Kutty!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+        body {
+            background: linear-gradient(to right, #ffafbd, #ffc3a0);
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+        }
+        h1 {
+            color: #ff69b4;
+            font-size: 3em;
+            font-family: 'Dancing Script', cursive;
+        }
+        p {
+            color: #696969;
+            font-size: 1.5em;
+        }
+        .btn {
+            background: #ff69b4;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            margin-top: 20px;
+            opacity: 0;
+        }
+        #surprise {
+            display: none; /* Hidden until revealed */
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body>
+    <audio autoplay loop>
+        <source src="https://drive.google.com/uc?export=download&id=1Ap2phf7wT-r1f5ASi_WWp9TbLaxQmEQt" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+    <div id="particles-js"></div>
+    <div class="container">
+        <h1 id="title">Happy Birthday, Mubry Kutty!</h1>
+        <p id="message1">On this special day, I wanted to create something just for you. You're not just a friend; you're a treasure, and you deserve the world. 🎉</p>
+        <p id="message2">May your day be filled with love, joy, and all the happiness in the universe. 🌟</p>
+        <p id="cta">Click the button below for a special surprise!</p>
+        <button class="btn" onclick="showSurprise()">Reveal Surprise</button>
+
+        <div id="surprise">
+            <h2 id="surprise-title">You are amazing, Mubry Kutty! 💖</h2>
+            <p id="surprise-message">Thank you for being a wonderful part of my life. Here's to many more memories and amazing moments together.</p>
+            <p id="heartfelt-message">Your presence in my life brings so much happiness and warmth. I hope this day is as special as you are. 🎂</p>
+            <p id="wishes">Wishing you the most magical birthday, filled with love, laughter, and endless joy. You're the best! 🌈</p>
+
+            <!-- Heartfelt Notes -->
+            <p style="font-weight:bold;">Love U lots always, u r something special to me.</p>
+            <p>I wish to have you by my side till my last breath.</p>
+            <p>No matter how cold-hearted I become or how broken I am.</p>
+            <p>You have access to a part of my soft side; don't ever leave even if I do some crazy or annoying things.</p>
+            <p>Your soul really means a lot to me.</p>
+            <p>Be happy; share your problems.</p>
+            <p>Don't forget I'm just a phone call away during your hard times without fail.</p>
+            <p>Stay in touch; treat when we meet.</p>
+        </div>
+    </div>
+
+    <script>
+        // GSAP animations
+        gsap.to(".container", { duration: 2, opacity: 1, ease: "power2.out" });
+        gsap.from("#title", { duration: 2, y: -50, opacity: 0, ease: "bounce", delay: 0.5 });
+        gsap.from("#message1", { duration: 2, x: -200, opacity: 0, ease: "power2.inOut", delay: 1 });
+        gsap.from("#message2", { duration: 2, x: 200, opacity: 0, delay: 1.5, ease: "power2.inOut" });
+        gsap.from("#cta", { duration: 2, scale: 0.5, opacity: 0, delay: 2, ease: "back" });
+        gsap.to(".btn", { duration: 2, opacity: 1, delay: 2.5, ease: "power2.out" });
+
+        function showSurprise() {
+            gsap.from("#surprise-title", { duration: 2, scale: 0.5, rotation: 360, opacity: 0, ease: "elastic.out(1, 0.3)" });
+            gsap.from("#surprise-message", { duration: 2, y: -50, opacity: 0, ease: "bounce", delay: 1 });
+            gsap.from("#heartfelt-message", { duration: 2, x: -200, opacity: 0, ease: "power2.inOut", delay: 1.5 });
+            gsap.from("#wishes", { duration: 2, x: 200, opacity: 0, delay: 2, ease: "power2.inOut" });
+            
+            document.getElementById('surprise').style.display = 'block'; // Show surprise message
+        }
+
+        // Particles.js configuration
+        particlesJS("particles-js", {
+          "particles": {
+              "number": {
+                  "value": 100,
+                  "density": {
+                      "enable": true,
+                      "value_area": 800
+                  }
+              },
+              "color": {
+                  "value": ["#ff69b4", "#ffc3a0"]
+              },
+              "shape": {
+                  "type": "circle",
+                  "stroke": {
+                      "width": 0,
+                      "color": "#000000"
+                  },
+                  "polygon": {
+                      "nb_sides": 5
+                  }
+              },
+              "opacity": {
+                  "value": 0.5,
+                  "random": false,
+                  "anim": {
+                      "enable": false,
+                      "speed": 1,
+                      "opacity_min": 0.1,
+                      "sync": false
+                  }
+              },
+              "size": {
+                  "value": 3,
+                  "random": true,
+                  "anim": {
+                      "enable": false,
+                      "speed": 40,
+                      "size_min": 0.1,
+                      "sync": false
+                  }
+              },
+              "line_linked": {
+                  "enable": true,
+                  "distance": 150,
+                  "color": "#ffffff",
+                  "opacity": 0.4,
+                  "width": 1
+              },
+              "move": {
+                  "enable": true,
+                  "speed": 6,
+                  "direction": "none",
+                  "random": false,
+                  "straight": false,
+                  "out_mode": "out",
+                  "bounce": false,
+                  "attract": {
+                      "enable": false,
+                      "rotateX": 600,
+                      "rotateY": 1200
+                  }
+              }
+          },
+          // Interactivity settings
+          // ...
+          // Retina detect
+          retina_detect:true
+      });
+    </script> 
+</body> 
+</html>  
